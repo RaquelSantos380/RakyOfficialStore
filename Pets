@@ -1,0 +1,8 @@
+Adopt me Pets/
+├── index.html         (Arquivo principal)
+├── css/
+│   └── estilo.css     (Folha de estilos)
+├── js/
+│   └── script.js      (Scripts JavaScript)
+└── img/
+    └── logo.png       (Imagens do projeto)
