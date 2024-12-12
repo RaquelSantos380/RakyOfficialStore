@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha a Raridade do Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: #a07be7; /* Roxo claro */
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 2rem;
+        }
+
+        /* Estilo da seção de opções */
+        .options {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .options h2 {
+            font-size: 1.8rem;
+            color: #a07be7; /* Roxo claro */
+            margin-bottom: 20px;
+        }
+
+        .options button {
+            background-color: #a07be7;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .options button:hover {
+            background-color: #8663d9;
+        }
+
+        .options button.active {
+            background-color: #8663d9; /* Cor de botão clicado */
+        }
+
+        /* Estilo da seção de imagens */
+        .inventory {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .inventory div {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .inventory img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #a07be7;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .check-button {
+            background-color: #a07be7;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .check-button:hover {
+            background-color: #8663d9;
+        }
+
+        /* Estilo para o botão no rodapé */
+        .footer-button {
+            background-color: #a07be7;
+            color: white;
+            font-size: 1.5rem;
+            padding: 20px 40px;
+            border: 2px solid white;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .footer-button:hover {
+            background-color: #8663d9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Qual será a raridade de seu pet?</h1>
+    </header>
+
+    <section class="options">
+        <h2>Escolha a raridade do seu pet:</h2>
+        <button onclick="setActiveButton(this)">Sem Poção</button>
+        <button onclick="setActiveButton(this)">R</button>
+        <button onclick="setActiveButton(this)">FR</button>
+        <button onclick="setActiveButton(this)">NFR</button>
+        <button onclick="setActiveButton(this)">MFR</button>
+    </section>
+
+    <section class="inventory" id="inventory">
+        <!-- Aqui você pode adicionar as imagens dos seus pets com a raridade acima -->
+        <div>
+            <p>Lendário</p>
+            <img src="1.jpg" alt="Pet Lendário">
+        </div>
+        <div>
+            <p>Ultra-Raro</p>
+            <img src="2.jpg" alt="Pet Ultra-Raro">
+        </div>
+        <div>
+            <p>Raro</p>
+            <img src="3.jpg" alt="Pet Raro">
+        </div>
+        <div>
+            <p>Incomum</p>
+            <img src="4.jpg" alt="Pet Incomum">
+        </div>
+        <div>
+            <p>Comum</p>
+            <img src="5.jpg" alt="Pet Comum">
+        </div>
+    </section>
+
+    <section class="available-pets">
+        <h2>Pets disponíveis na raridade que mencionou:</h2>
+    </section>
+
+    <footer>
+        <a href="https://rakyofficialstore.wordpress.com/289-2/" class="footer-button" target="_blank">Confira já os pets disponíveis</a>
+    </footer>
+
+    <script>
+        // Função para marcar o botão clicado e rolar para o rodapé
+        function setActiveButton(button) {
+            // Remover a classe 'active' de todos os botões
+            let buttons = document.querySelectorAll('.options button');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            // Adicionar a classe 'active' ao botão clicado
+            button.classList.add('active');
+            
+            // Rolar para o rodapé após o clique
+            document.querySelector('footer').scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
